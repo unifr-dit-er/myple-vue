@@ -8,6 +8,8 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.13"
+    "naive-ui": "^2.33.5",
+    "nuxt": "3.0.0-rc.13",
+    "vfonts": "^0.0.3"
   }
 }
