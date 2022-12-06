@@ -1,5 +1,10 @@
+<script setup>
+  import { NLayout } from 'naive-ui'
+</script>
+
 <template>
-  <NuxtLayout>
+  <n-layout position="absolute">
+    <AppHeader />
     <NuxtPage />
-  </NuxtLayout>
+  </n-layout>
 </template>

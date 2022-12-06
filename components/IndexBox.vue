@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="box">
+  <div class="index-box">
     <n-h1 class="title">MyPLE</n-h1>
     <span>
       MyPLE propose 3 types d'aides, en libre accès, sur les outils informatiques pouvant aider à réaliser les tâches de travail du métier d'étudiant·e.
@@ -18,7 +18,7 @@
 </template>
 
 <style lang="sass" scoped>
-.box
+.index-box
   width: 400px
   margin: 5px
   text-align: center

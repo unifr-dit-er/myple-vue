@@ -1,17 +1,15 @@
 <script setup lang="ts">
-definePageMeta({
-  layout: "homepage"
-})
+  import { NLayout } from 'naive-ui'
 </script>
 
 <template>
-  <div>
+  <n-layout position="absolute" style="top: 88px">
     <div class="container">
       <IndexBox />
     </div>
     <img class="image left" src="~/assets/img/undraw_bibliophile.svg" alt="" />
     <img class="image right" src="~/assets/img/undraw_road_to_knowledge.svg" alt="" />
-  </div>
+  </n-layout>
 </template>
 
 <style lang="sass" scoped>

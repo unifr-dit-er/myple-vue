@@ -3,14 +3,14 @@
 </script>
 
 <template>
-  <n-layout-header class="header" bordered position="absolute">
+  <n-layout-header class="app-header" bordered position="absolute">
     <AppHeaderTitle />
     <AppHeaderMenu />
   </n-layout-header>
 </template>
 
 <style lang="sass" scoped>
-.header
+.app-header
   height: 88px
   padding: 24px
   display: flex

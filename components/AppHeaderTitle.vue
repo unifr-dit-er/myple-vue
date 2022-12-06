@@ -3,14 +3,14 @@
 </script>
 
 <template>
-  <n-text class="title">
+  <n-text class="app-header-title">
     <img class="image" src="~/assets/img/unifr-logo.png" alt="Unifr logo" />
     <span>MyPLE</span>
   </n-text>
 </template>
 
 <style lang="sass" scoped>
-.title
+.app-header-title
   font-size: 24px
   display: flex
   margin-right: 80px
