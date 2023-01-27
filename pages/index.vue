@@ -1,30 +1,13 @@
-<script setup lang="ts">
-  import { NLayout } from 'naive-ui'
-</script>
-
 <template>
-  <n-layout position="absolute" style="top: 88px">
-    <div class="container">
-      <IndexBox />
+  <div class="hero min-h-screen bg-base-300">
+    <div class="flex mx-4">
+      <img class="w-1/3 hidden md:block" src="~/assets/img/undraw_bibliophile.svg" alt="" />
+      <div class="hero-content mt-12 flex-col">
+          <h1 class="text-7xl font-bold">MyPLE</h1>
+          <p class="py-3 w-96 text-center">MyPLE propose 3 types d'aides, en libre accès, sur les outils informatiques pouvant aider à réaliser les tâches de travail du métier d'étudiant·e.</p>
+          <IndexStats />
+      </div>
+      <img class="w-1/3 hidden 2xl:block" src="~/assets/img/undraw_road_to_knowledge.svg" alt="" />
     </div>
-    <img class="image left" src="~/assets/img/undraw_bibliophile.svg" alt="" />
-    <img class="image right" src="~/assets/img/undraw_road_to_knowledge.svg" alt="" />
-  </n-layout>
+  </div>
 </template>
-
-<style lang="sass" scoped>
-.container
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  height: 700px
-.image
-  position: absolute
-  width: 30%
-  &.left
-    top: 10%
-  &.right
-    top: 30%
-    right: 0
-</style>

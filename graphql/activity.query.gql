@@ -1,0 +1,16 @@
+query activity($id: ID!, $lang: String!) {
+  activity: activities_by_id(id: $id) {
+    id
+    translations(filter: {languages_code: {_eq: $lang} }) {
+      title
+      content
+    }
+    steps {
+      id
+      translations(filter: {languages_code: {_eq: $lang} }) {
+        title
+        content
+      }
+    }
+  }
+}

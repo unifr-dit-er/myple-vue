@@ -1,0 +1,8 @@
+query activities($lang: String!) {
+  activities: activities {
+    id
+    translations(filter: {languages_code: {_eq: $lang} }) {
+      title
+    }
+  }
+}

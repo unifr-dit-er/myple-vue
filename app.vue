@@ -1,10 +1,6 @@
-<script setup>
-  import { NLayout } from 'naive-ui'
-</script>
-
 <template>
-  <n-layout position="absolute">
-    <AppHeader />
+  <div data-theme="light">
+    <BaseNavbar />
     <NuxtPage />
-  </n-layout>
+  </div>
 </template>
