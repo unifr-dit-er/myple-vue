@@ -1,29 +1,26 @@
-<script setup lang="ts">
+<script setup>
+import { useActive } from 'vue-use-active-scroll'
 const props = defineProps({
-  activeId: { type: String },
-  steps: { type: Array<Step> }
+  steps: { type: Array, required: true }
 })
 
-const router = useRouter()
-
-const goToSection = (id: string) => {
-  const el = document.getElementById(id)
-  if (el) {
-    router.push({ hash: `#${id}` })
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  }
-}
+const links = props.steps.map(step => ({
+  href: step.id,
+  label: dTranslate(step, 'title')
+}))
+const targets = computed(() => links.map(({ href }) => href))
+const { isActive, setActive } = useActive(targets, { overlayHeight: 70 })
 </script>
 
 <template>
-  <ul class="menu menu-compact">
-    <li
-      v-for="{ id, title } in steps"
-      :id="`toc-${id}`"
-      :key="id"
-      @click="goToSection(id.toString())"
-    >
-      <a>{{ title }}</a>
-    </li>
-  </ul>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Sommaire</h2>
+      <ul class="menu">
+        <li v-for="(link) in links" :key="link.href" :class="{ bordered: isActive(link.href) }">
+          <a @click="setActive(link.href)" :href="`#${link.href}`">{{ link.label }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
