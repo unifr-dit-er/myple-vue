@@ -17,12 +17,12 @@ const { data, pending, error } = await useAsyncGql('GetActivity', { id: id, lang
         <h1 class="text-4xl font-bold">{{ dTranslate(data.activity, 'title') }}</h1>
         <Related />
         <p class="prose max-w-none" v-html="dTranslate(data.activity, 'content')"></p>
-        <template v-for="step in data.activity.steps">
+        <section v-for="step in data.activity.steps">
           <div class="divider"></div>
-          <h2 :id="step.id" class="text-2xl font-bold scroll-mt-32">{{ dTranslate(step, 'title') }}</h2>
+          <h2 :id="step.id" class="text-2xl font-bold scroll-mt-96">{{ dTranslate(step, 'title') }}</h2>
           <Related small />
           <div class="prose max-w-none" v-html="dTranslate(step, 'content')"></div>
-        </template>
+        </section>
       </article>
     </div>
   </div>
