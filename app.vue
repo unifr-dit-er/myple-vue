@@ -1,5 +1,5 @@
 <template>
-  <div data-theme="light">
+  <div data-theme="uni">
     <BaseNavbar />
     <NuxtPage />
   </div>

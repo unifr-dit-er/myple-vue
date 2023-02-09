@@ -1,38 +1,40 @@
-<script setup lang="ts">
-import ACTIVITY_QUERY from '@/graphql/activity.query.gql'
-
+<script setup>
 const { id } = useRoute().params
 const lang = 'fr-FR'
-const { result, loading, error } = useQuery(ACTIVITY_QUERY, { id, lang })
+
+const { data, pending, error } = await useAsyncGql('GetActivity', { id: id, lang: lang })
 </script>
 
 <template>
   <div class="min-h-screen bg-base-300 px-24 py-32">
     <div class="bg-base-200 fixed top-16 left-0 w-80 h-full px-4 py-8 shadow">
-      <!-- <ActivityToc activeId="1" :steps="steps" /> -->
-      TOC
-    </div>
-    <div class="ml-72 max-w-4xl">
-      <LoadingIndicator v-if="loading"></LoadingIndicator>
-      <ErrorBox v-else-if="error">{{ error }}</ErrorBox>
-      <div v-else-if="result">
-        <article v-if="result.activity">
-          <ActivityHeader
-            :title="result.activity.translations[0].title"
-            :content="result.activity.translations[0].content"
-          />
-          <ActivityStep v-for="(step, index) in result.activity.steps"
-            :index="index"
-            :key="step.id"
-            :id="step.id"
-            :title="step.translations[0].title"
-            :content="step.translations[0].content"
-          />
-        </article>
-        <div v-else>
-          <ActivityHeader title="Activity Not Found" />
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Sommaire</h2>
+          <ul class="menu">
+            <li v-for="step in data.activity?.steps" class="bordered">
+              <a :href="`#${step.id}`">{{ dTranslate(step, 'title') }}</a>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
+    <div class="ml-72 max-w-4xl">
+      <LoadingIndicator v-if="pending" />
+      <ErrorBox v-else-if="error">{{ error }}</ErrorBox>
+      <article v-else-if="data?.activity">
+        <h1 class="text-4xl font-bold">{{ dTranslate(data.activity, 'title') }}</h1>
+        <Related />
+        <p class="prose max-w-none" v-html="dTranslate(data.activity, 'content')"></p>
+        <template v-for="step in data.activity.steps">
+          <div class="divider"></div>
+          <div :id="step.id">
+            <h2 class="text-2xl font-bold">{{ dTranslate(step, 'title') }}</h2>
+            <Related small />
+            <div class="prose max-w-none" v-html="dTranslate(step, 'content')"></div>
+          </div>
+        </template>
+      </article>
     </div>
   </div>
 </template>

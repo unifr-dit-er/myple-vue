@@ -1,4 +1,4 @@
-query activity($id: ID!, $lang: String!) {
+query GetActivity($id: ID!, $lang: String!) {
   activity: activities_by_id(id: $id) {
     id
     translations(filter: {languages_code: {_eq: $lang} }) {
@@ -11,6 +11,15 @@ query activity($id: ID!, $lang: String!) {
         title
         content
       }
+    }
+  }
+}
+
+query GetActivities($lang: String!) {
+  activities: activities {
+    id
+    translations(filter: {languages_code: {_eq: $lang} }) {
+      title
     }
   }
 }
