@@ -11,6 +11,12 @@ query GetActivity($id: ID!, $lang: String!) {
         title
         content
       }
+      annexes {
+        translations(filter: {languages_code: {_eq: $lang} }) {
+          title
+          content
+        }
+      }
     }
   }
 }

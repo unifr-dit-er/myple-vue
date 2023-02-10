@@ -8,18 +8,14 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/apollo": "^5.0.0-alpha.5",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "@tailwindcss/typography": "^0.5.9",
-    "@vueuse/core": "^9.12.0",
-    "@vueuse/nuxt": "^9.12.0",
-    "nuxt": "^3.0.0",
-    "vfonts": "^0.0.3"
+    "nuxt": "^3.0.0"
   },
   "dependencies": {
+    "animated-scroll-to": "^2.3.0",
     "daisyui": "^2.47.0",
     "nuxt-graphql-client": "^0.2.25",
-    "vue-scrollto": "^2.20.0",
     "vue-tabler-icons": "^2.18.0",
     "vue-use-active-scroll": "^0.9.8"
   }

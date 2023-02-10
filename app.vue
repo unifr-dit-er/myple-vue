@@ -1,12 +1,6 @@
 <template>
   <div data-theme="uni">
-    <BaseNavbar />
+    <Navbar />
     <NuxtPage />
   </div>
 </template>
-
-<style>
-html {
-  scroll-behavior: smooth;
-}
-</style>
