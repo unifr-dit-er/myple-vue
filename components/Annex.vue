@@ -6,7 +6,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <div tabindex="0" class="collapse collapse-plus border border-base-300 bg-base-200 rounded-box">
+  <div class="collapse collapse-plus border border-base-300 bg-base-200 rounded-box">
+    <input type="checkbox" />
     <div class="collapse-title font-medium">
       {{ title }}
     </div>
