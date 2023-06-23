@@ -11,10 +11,30 @@ query GetActivity($id: ID!, $lang: String!) {
         title
         content
       }
-      annexes {
+      toolfamilies {
+        categories_id {
+          id
+          translations(filter: {languages_code: {_eq: $lang} }) {
+            title
+          }
+        }
+      }
+      annexes(sort: ["sort"]) {
+        id
         translations(filter: {languages_code: {_eq: $lang} }) {
           title
           content
+        }
+      }
+      resources(sort: ["resources_id.title"], filter: { resources_id: { languages: { languages_code: { _eq: $lang } } } } ) {
+        resources_id {
+          id
+          title
+          date
+          author
+          type
+          tutorial
+          url
         }
       }
     }

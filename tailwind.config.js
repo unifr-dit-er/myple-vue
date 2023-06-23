@@ -4,7 +4,7 @@ module.exports = {
     themes: [
       {
         uni: {
-          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
           primary: "#d06516",
           secondary: "#00134a",
           accent: "#d06516",
@@ -17,7 +17,7 @@ module.exports = {
       },
       {
         unidark: {
-          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
+          ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
           primary: "#d06516",
           secondary: "#7981A7",
           accent: "#d06516",
@@ -27,19 +27,7 @@ module.exports = {
           warning: "#f5bd26",
           error: "#b81f42",
         },
-      },
-      {
-        light: {
-          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-        },
-      },
-      {
-        dark: {
-          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
-          primary: "#d06516"
-        },
-      },
-      "coffee"
+      }
     ],
   },
 };
