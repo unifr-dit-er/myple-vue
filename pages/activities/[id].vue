@@ -23,7 +23,7 @@ useIntersectionObserver(
     </div>
     <div class="ml-72">
       <article class="max-w-5xl">
-        <h1 class="inline-block text-3xl font-bold pt-3">{{ store.title }}</h1>
+        <h1 class="inline-block text-3xl font-bold pt-3"><IconNotebookLarge class="inline w-8" /> {{ store.title }}</h1>
         <div class="divider"></div>
         <div ref="intro" class="prose max-w-none max-w-4xl" v-html="store.content"></div>
         <Step v-for="step in store.steps" :key="step.id" :step="step" />
