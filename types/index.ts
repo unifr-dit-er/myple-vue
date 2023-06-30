@@ -2,6 +2,11 @@ export { }
 
 declare global {
 
+  interface Activity {
+    id: number;
+    title: string;
+  }
+
   interface Step {
     id: number;
     title: string;
@@ -31,6 +36,24 @@ declare global {
     type: string;
     tutorial: boolean;
     url: string;
+  }
+
+  interface Tool {
+    id: number;
+    title: string;
+    image: string;
+    description: string;
+    url: string;
+    urlAlternativeto: string;
+    urlUnifr: string;
+    urlUsi: string;
+    families: ToolFamily[];
+    tags: Tag[];
+  }
+
+  interface Tag {
+    id: number;
+    title: string;
   }
 
 }

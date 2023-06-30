@@ -1,6 +1,6 @@
 <template>
-  <div data-theme="uni">
-    <Navbar />
+  <div>
+    <Nav />
     <NuxtPage />
   </div>
 </template>

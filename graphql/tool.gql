@@ -1,0 +1,32 @@
+query GetTools($lang: String!, $filter: tools_filter!) {
+  tools: tools(sort: ["title"], limit: -1, filter: $filter) {
+    id
+		title
+    image {
+      id
+    }
+		url
+		url_alternativeto
+		url_unifr
+		url_usi
+		categories {
+			categories_id {
+        id
+				translations(filter: {languages_code: {_eq: $lang} }) {
+					title
+				}
+			}
+		}
+		tags {
+			tags_id {
+        id
+				translations(filter: {languages_code: {_eq: $lang} }) {
+					title
+				}
+			}
+		}
+    translations(filter: {languages_code: {_eq: $lang} }) {
+      description
+    }
+  }
+}
