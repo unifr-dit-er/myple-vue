@@ -29,7 +29,7 @@ export const useFamiliesStore = defineStore('families', () => {
           id: familyData.id,
           title: dTranslate(familyData, 'title')
         }
-      })
+      }).sort((a: ToolFamily, b: ToolFamily) => a.title.localeCompare(b.title))
     }
   }
 

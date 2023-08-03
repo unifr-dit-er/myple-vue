@@ -17,7 +17,7 @@ useIntersectionObserver(
 </script>
 
 <template>
-  <div class="min-h-screen bg-base-300 px-24 py-32">
+  <div class="min-h-screen bg-base-300 px-6 md:px-24 py-32">
     <div class="bg-base-200 hidden lg:block fixed top-16 left-0 w-80 h-full px-4 py-8 shadow">
       <Toc :title="store.title" :steps="store.steps" :is-intro-active="isIntroActive" />
     </div>
