@@ -1,0 +1,11 @@
+query GetStats {
+  activities {
+    id
+  }
+  tools {
+    id
+  }
+  trainings {
+    id
+  }
+}

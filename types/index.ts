@@ -58,4 +58,10 @@ declare global {
     title: string;
   }
 
+  interface Stats {
+    activities: number;
+    tools: number;
+    trainings: number;
+  }
+
 }
