@@ -15,6 +15,17 @@ query GetTools($lang: String!, $filter: tools_filter!) {
 				translations(filter: {languages_code: {_eq: $lang} }) {
 					title
 				}
+				steps {
+					steps_id {
+						id
+						translations(filter: {languages_code: {_eq: $lang} }) {
+							title
+						}
+						activity {
+						  id
+						}
+					}
+				}
 			}
 		}
 		tags {

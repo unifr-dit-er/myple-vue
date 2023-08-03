@@ -2,9 +2,10 @@ export { }
 
 declare global {
 
-  interface Activity {
+  interface Link {
     id: number;
     title: string;
+    step?: number;
   }
 
   interface Step {
@@ -48,6 +49,7 @@ declare global {
     urlUnifr: string;
     urlUsi: string;
     families: ToolFamily[];
+    steps: Link[];
     tags: Tag[];
   }
 

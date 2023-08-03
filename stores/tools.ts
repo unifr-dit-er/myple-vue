@@ -23,6 +23,29 @@ export const useToolsStore = defineStore('tools', () => {
 
     if (data?.value?.tools) {
       tools.value = data.value.tools.map((toolData: any) => {
+        let steps = toolData.categories.flatMap((categoryData: any) => {
+          return categoryData.categories_id.steps
+            .filter((stepData: any) => stepData.steps_id !== null) // Filter out null steps_id
+            .map((stepData: any) => {
+              return {
+                id: Number(stepData.steps_id.activity.id),
+                title: dTranslate(stepData.steps_id, 'title'),
+                step: Number(stepData.steps_id.id)
+              }
+            })
+        }).sort((a: Link, b: Link) => a.title.localeCompare(b.title))
+
+        // Remove duplicates based on step id
+        const ids = new Set();
+        steps = steps.filter((step: Link) => {
+          if(ids.has(step.step)) {
+            return false;
+          } else {
+            ids.add(step.step);
+            return true;
+          }
+        })
+
         return {
           id: toolData.id,
           title: toolData.title,
@@ -38,6 +61,7 @@ export const useToolsStore = defineStore('tools', () => {
               title: dTranslate(familyData.categories_id, 'title')
             }
           }),
+          steps,
           tags: toolData.tags.map((tagsData: any) => {
             return {
               id: Number(tagsData.tags_id.id),
@@ -53,10 +77,14 @@ export const useToolsStore = defineStore('tools', () => {
     drawer.value = true
   }
 
+  function closeDrawer() {
+    drawer.value = false
+  }
+
   function setActive(tool: Tool) {
     activeTool.value = tool
     drawer.value = true
   }
 
-  return { tools, drawer, activeTool, fetch, setActive, openDrawer }
+  return { tools, drawer, activeTool, fetch, setActive, openDrawer, closeDrawer }
 })

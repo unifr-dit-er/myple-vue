@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const store = useToolsStore()
 store.fetch()
+store.closeDrawer()
 </script>
 
 <template>
@@ -22,7 +23,7 @@ store.fetch()
     </div>
     <div class="drawer-side">
       <label for="my-drawer-4" class="drawer-overlay"></label>
-      <div class="p-4 pt-24 w-96 min-h-screen bg-base-200">
+      <div class="p-4 pt-24 w-1/4 min-h-screen bg-base-200">
         <ToolDrawer />
       </div>
     </div>

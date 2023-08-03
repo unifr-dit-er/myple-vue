@@ -1,5 +1,5 @@
 export const useMiscStore = defineStore('misc', () => {
-  const activities: Ref<Activity[]> = ref([])
+  const activities: Ref<Link[]> = ref([])
 
   async function fetch() {
     const { data } = await useAsyncGql('GetActivities', {

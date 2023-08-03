@@ -17,7 +17,7 @@ const store = useToolsStore()
       <div v-for="family in store.activeTool?.families" class="badge badge-outline mb-1 mr-2">{{ family.title }}</div>
       <div v-for="tag in store.activeTool?.tags" class="badge badge-outline mb-1 mr-2">{{ tag.title }}</div>
     </div>
-    <ul class="menu bg-base-100 rounded-box mx-12">
+    <ul class="menu bg-base-100 rounded-box mx-4 mb-4">
       <li v-if="store.activeTool?.url">
         <a :href="store.activeTool?.url"><IconExternalLink /> Site officiel</a>
       </li>
@@ -29,6 +29,15 @@ const store = useToolsStore()
       </li>
       <li v-if="store.activeTool?.urlUsi">
         <a :href="store.activeTool?.urlUsi"><IconHomeShield /> USI</a>
+      </li>
+    </ul>
+    <ul class="menu bg-base-100 rounded-box mx-4">
+      <li class="menu-title">Activités liées</li>
+      <li v-for="step in store.activeTool?.steps" :key="step.step">
+        <NuxtLink :to="`/activities/${step.id}#${step.step}`" class="block flex">
+          <div class="w-6"><IconNotebook /></div>
+          {{ step.title }}
+        </NuxtLink>
       </li>
     </ul>
   </div>
