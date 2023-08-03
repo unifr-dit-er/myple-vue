@@ -16,7 +16,7 @@ const props = defineProps<{
         </div>
         <div class="flex-grow ml-4">
           <h2 class="card-title flex-grow">{{ tool.title }}</h2>
-          <p v-html="tool.description"></p>
+          <div v-html="tool.description"></div>
         </div>
       </div>
       <div class="card-actions mt-2">

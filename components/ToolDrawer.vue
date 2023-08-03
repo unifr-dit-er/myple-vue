@@ -14,8 +14,8 @@ const store = useToolsStore()
     </h3>
     <p v-html="store.activeTool?.description" class="mb-4"></p>
     <div class="mb-4">
-      <div v-for="family in store.activeTool?.families" class="badge badge-outline mb-2 mr-2">{{ family.title }}</div>
-      <div v-for="tag in store.activeTool?.tags" class="badge badge-outline mb-2 mr-2">{{ tag.title }}</div>
+      <div v-for="family in store.activeTool?.families" class="badge badge-outline mb-1 mr-2">{{ family.title }}</div>
+      <div v-for="tag in store.activeTool?.tags" class="badge badge-outline mb-1 mr-2">{{ tag.title }}</div>
     </div>
     <ul class="menu bg-base-100 rounded-box mx-12">
       <li v-if="store.activeTool?.url">
