@@ -9,7 +9,7 @@ defineProps<{
 <template>
   <ul class="menu">
     <Transition name="fade" mode="out-in">
-      <li v-if="isIntroActive" class="menu-title">Sommaire</li>
+      <li v-if="isIntroActive" class="menu-title">{{ $t('summary') }}</li>
       <li v-else class="menu-title">{{ title }}</li>
     </Transition>
     <li :class="{ 'border-primary': isIntroActive }" class="border-l-2">

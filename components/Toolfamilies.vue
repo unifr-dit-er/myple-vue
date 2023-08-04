@@ -10,7 +10,7 @@ const store = useFamiliesStore()
     <div class="flex">
       <IconTools class="shrink-0 mr-2" />
       <div>
-        Familles d'outils concernées :
+        {{ $t('related_families') }} :
         <NuxtLink v-for="family in toolFamilies" :to="`/tools/`" @click="store.setActive(family.id)" class="link link-primary mr-2">
           {{ family.title }}
         </NuxtLink>

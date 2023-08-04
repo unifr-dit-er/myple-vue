@@ -6,21 +6,21 @@ const { stats } = useStatsStore()
   <div class="stats shadow">
 
     <div class="stat">
-      <div class="stat-title">Activités</div>
+      <div class="stat-title">{{ $t('activities') }}</div>
       <div class="stat-value text-accent">{{ stats.activities }}</div>
-      <div class="stat-desc">en auto-apprentissage</div>
+      <div class="stat-desc">{{ $t('activities_info') }}</div>
     </div>
 
     <div class="stat">
-      <div class="stat-title">Outils</div>
+      <div class="stat-title">{{ $t('tools') }}</div>
       <div class="stat-value text-accent">{{ stats.tools }}</div>
-      <div class="stat-desc">séléctionnés par nos soins</div>
+      <div class="stat-desc">{{ $t('tools_info') }}</div>
     </div>
 
     <div class="stat">
-      <div class="stat-title">Formations</div>
+      <div class="stat-title">{{ $t('training') }}</div>
       <div class="stat-value text-accent">{{ stats.trainings }}</div>
-      <div class="stat-desc">DigitalSkills</div>
+      <div class="stat-desc">{{ $t('training_info') }}</div>
     </div>
 
   </div>

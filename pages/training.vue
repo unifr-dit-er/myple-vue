@@ -7,7 +7,7 @@ const store = useTrainingsStore()
     <div class="max-w-5xl mx-auto">
       <div class="flex mb-4 items-center">
         <IconSchoolLarge />
-        <h2 class="text-4xl font-bold leading-normal ml-3">Formations</h2>
+        <h2 class="text-4xl font-bold leading-normal ml-3">{{ $t('training') }}</h2>
       </div>
 
       <div v-for="training in store.trainings" :key="training.id" class="collapse collapse-arrow bg-base-200 mb-2">

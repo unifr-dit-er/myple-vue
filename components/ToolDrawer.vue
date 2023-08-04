@@ -19,7 +19,7 @@ const store = useToolsStore()
     </div>
     <ul class="menu bg-base-100 rounded-box mx-4 mb-4">
       <li v-if="store.activeTool?.url">
-        <a :href="store.activeTool?.url"><IconExternalLink /> Site officiel</a>
+        <a :href="store.activeTool?.url"><IconExternalLink /> {{ $t('official_website') }}</a>
       </li>
       <li v-if="store.activeTool?.urlAlternativeto">
         <a :href="store.activeTool?.urlAlternativeto"><IconRobot /> AlternativeTo</a>
@@ -32,7 +32,7 @@ const store = useToolsStore()
       </li>
     </ul>
     <ul class="menu bg-base-100 rounded-box mx-4">
-      <li class="menu-title">Activités liées</li>
+      <li class="menu-title">{{ $t('related_activities') }}</li>
       <li v-for="step in store.activeTool?.steps" :key="step.step">
         <NuxtLink :to="`/activities/${step.id}#${step.step}`" class="block flex">
           <div class="w-6"><IconNotebook /></div>

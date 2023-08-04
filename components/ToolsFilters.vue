@@ -9,7 +9,7 @@ store.fetch()
       @click="store.reset()"
       :class="{ 'btn-primary': store.active == 0 }"
       class="btn btn-sm mr-2 mb-2">
-      Tous
+      {{ $t('all') }}
     </button>
     <button
       v-for="family in store.families"

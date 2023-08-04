@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     'nuxt-graphql-client',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxtjs/i18n'
   ],
   imports: {
     dirs: ['./stores']
@@ -22,5 +23,8 @@ export default defineNuxtConfig({
     public: {
       GQL_HOST: 'https://eddb9.unifr.ch/myple/graphql' // overwritten by process.env.GQL_HOST
     }
+  },
+  i18n: {
+    locales: ['fr', 'de', 'it']
   }
 })

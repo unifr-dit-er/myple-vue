@@ -22,19 +22,24 @@
         </svg>
       </div>
       <p>
-        Développement <a class="link link-accent" href="https://www.unifr.ch/nte/fr/">DIT-NTE</a>
-        <br/>Contenus pédagogiques du <a class="link link-accent" href="https://www.unifr.ch/uni/fr/organisation/acad/didactique-universitaire/">Service de didactique universitaire et compétences numériques</a>
+        {{ $t('dev') }} <a class="link link-accent" href="https://www.unifr.ch/nte/fr/">DIT-NTE</a>
+        <br/>{{ $t('educational_contents') }} <a class="link link-accent" href="https://www.unifr.ch/uni/fr/organisation/acad/didactique-universitaire/">{{ $t('didanum') }}</a>
       </p>
     </div>
     <div>
       <span class="footer-title">Copyright</span>
       <div>
-        <div class="flex items-center">
-          <IconCopyright />
-          <div class="ml-2">
+        <div>
+          <div class="flex items-center">
+            <IconCreativeCommons />
+            <IconCreativeCommonsBy />
+            <IconCreativeCommonsNc />
+            <IconCreativeCommonsSa />
+          </div>
+          <div>
             <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/ch/deed.fr" class="link">
-              Attribution - Pas d’Utilisation Commerciale
-              <br>Partage dans les Mêmes Conditions 3.0 Suisse (CC BY-NC-SA 3.0 CH)
+              {{ $t('copyright') }}
+              <br>{{ $t('copyright2') }}
             </a>
           </div>
         </div>

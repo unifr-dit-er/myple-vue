@@ -8,7 +8,7 @@ defineProps<{
   <div class="collapse collapse-plus border border-base-300 bg-base-200">
     <input type="checkbox" />
     <div class="collapse-title font-medium">
-      <IconResources class="inline mr-1" /> Des ressources pour aller plus loin
+      <IconResources class="inline mr-1" /> {{ $t('related_resources') }}
     </div>
     <div class="collapse-content">
       <ul class="menu menu-compact p-2">
