@@ -1,0 +1,20 @@
+query GetTrainings($lang: String!) {
+  trainings (sort: ["sort"]) {
+    id
+    translations(filter: {languages_code: {_eq: $lang} }) {
+      title
+			description
+    }
+		semester {
+			translations(filter: {languages_code: {_eq: $lang} }) {
+				title
+			}
+		}
+		course_format {
+			translations(filter: {languages_code: {_eq: $lang} }) {
+				title
+			}
+		}
+		url
+  }
+}

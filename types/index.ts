@@ -64,4 +64,13 @@ declare global {
     trainings: number;
   }
 
+  interface Training {
+    id: number;
+    title: string;
+    description: string;
+    semester: string;
+    format: string;
+    url: string;
+  }
+
 }
