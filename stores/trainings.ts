@@ -1,10 +1,18 @@
+import { storeToRefs } from 'pinia'
+
 export const useTrainingsStore = defineStore('trainings', () => {
   const trainings: Ref<Training[]> = ref([])
+  const settings = useSettingsStore()
+
+  const { dLang } = storeToRefs(settings)
+
+  watch(
+    [() => dLang.value],
+    () => { fetch() }
+  )
 
   async function fetch() {
-    const { data } = await useAsyncGql('GetTrainings', {
-      lang: 'fr-FR'
-    })
+    const { data } = await useAsyncGql('GetTrainings', { lang: dLang })
 
     if (data?.value?.trainings) {
       trainings.value = data.value.trainings.map((trainingData: any) => {

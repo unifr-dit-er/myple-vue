@@ -1,3 +1,47 @@
+query GetTool($id: ID!, $lang: String!) {
+	tool: tools_by_id(id: $id) {
+		id
+		title
+    image {
+      id
+    }
+		url
+		url_alternativeto
+		url_unifr
+		url_usi
+		categories {
+			categories_id {
+        id
+				translations(filter: {languages_code: {_eq: $lang} }) {
+					title
+				}
+				steps {
+					steps_id {
+						id
+						translations(filter: {languages_code: {_eq: $lang} }) {
+							title
+						}
+						activity {
+						  id
+						}
+					}
+				}
+			}
+		}
+		tags {
+			tags_id {
+        id
+				translations(filter: {languages_code: {_eq: $lang} }) {
+					title
+				}
+			}
+		}
+    translations(filter: {languages_code: {_eq: $lang} }) {
+      description
+    }
+	}
+}
+
 query GetTools($lang: String!, $filter: tools_filter!) {
   tools: tools(sort: ["title"], limit: -1, filter: $filter) {
     id

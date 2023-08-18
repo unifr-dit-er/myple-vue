@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  toolFamilies: ToolFamily[]
+  families: Family[]
 }>()
 const store = useFamiliesStore()
 const localePath = useLocalePath()
@@ -12,7 +12,7 @@ const localePath = useLocalePath()
       <IconTools class="shrink-0 mr-2" />
       <div>
         {{ $t('related_families') }} :
-        <NuxtLink v-for="family in toolFamilies" :to="localePath(`/tools/`)" @click="store.setActive(family.id)" class="link link-primary mr-2">
+        <NuxtLink v-for="family in families" :to="localePath(`/tools/`)" @click="store.setActive(family.id)" class="link link-primary mr-2">
           {{ family.title }}
         </NuxtLink>
       </div>

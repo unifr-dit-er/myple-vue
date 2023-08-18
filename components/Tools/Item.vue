@@ -1,12 +1,12 @@
 <script setup lang="ts">
-const store = useToolsStore()
-const props = defineProps<{
+const store = useToolStore()
+defineProps<{
   tool: Tool
 }>()
 </script>
 
 <template>
-  <div @click="store.setActive(tool)" class="card card-compact bg-base-200 shadow-xl cursor-pointer">
+  <div @click="store.fetchAndOpen(tool.id)" class="card card-compact bg-base-200 shadow-xl cursor-pointer">
     <div class="card-body">
       <div class="flex">
         <div class="avatar">

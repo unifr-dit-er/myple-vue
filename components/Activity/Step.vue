@@ -16,10 +16,10 @@ useIntersectionObserver(
   <div class="divider mb-12"></div>
   <section :id="String(step.id)" ref="target">
     <h2 class="text-2xl font-bold mb-2">{{ step.title }}</h2>
-    <Toolfamilies v-if="step.toolFamilies.length" :tool-families="step.toolFamilies" />
+    <StepFamilies v-if="step.families.length" :families="step.families" />
     <div v-html="step.content" class="prose max-w-none mb-8"></div>
-    <Annex v-for="annex in step.annexes" :annex="annex" :key="annex.id" />
-    <Resources v-if="step.resources.length" :resources="step.resources" />
+    <StepAnnexes v-if="step.annexes.length" :annexes="step.annexes" />
+    <StepResources v-if="step.resources.length" :resources="step.resources" />
   </section>
 </template>
 

@@ -2,6 +2,13 @@ export { }
 
 declare global {
 
+  interface Activity {
+    id: number;
+    title: string;
+    content: string;
+    steps: Step[];
+  }
+
   interface Link {
     id: number;
     title: string;
@@ -12,13 +19,13 @@ declare global {
     id: number;
     title: string;
     content: string;
-    toolFamilies: ToolFamily[];
+    families: Family[];
     annexes: Annex[];
     resources: Resource[];
     isActive: boolean;
   }
 
-  interface ToolFamily {
+  interface Family {
     id: number;
     title: string;
   }
@@ -44,13 +51,13 @@ declare global {
     title: string;
     image: string;
     description: string;
-    url: string;
-    urlAlternativeto: string;
-    urlUnifr: string;
-    urlUsi: string;
-    families: ToolFamily[];
-    steps: Link[];
+    families: Family[];
     tags: Tag[];
+    url?: string;
+    urlAlternativeto?: string;
+    urlUnifr?: string;
+    urlUsi?: string;
+    steps?: Link[];
   }
 
   interface Tag {

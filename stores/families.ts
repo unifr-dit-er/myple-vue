@@ -1,5 +1,5 @@
 export const useFamiliesStore = defineStore('families', () => {
-  const families: Ref<ToolFamily[]> = ref([])
+  const families: Ref<Family[]> = ref([])
   const active = ref(0)
 
   const filter = computed(() => {
@@ -20,7 +20,7 @@ export const useFamiliesStore = defineStore('families', () => {
 
   async function fetch() {
     const { data } = await useAsyncGql('GetFamilies', {
-      lang: 'fr-FR'
+      lang: dLang()
     })
 
     if (data?.value?.families) {
@@ -29,7 +29,7 @@ export const useFamiliesStore = defineStore('families', () => {
           id: familyData.id,
           title: dTranslate(familyData, 'title')
         }
-      }).sort((a: ToolFamily, b: ToolFamily) => a.title.localeCompare(b.title))
+      }).sort((a: Family, b: Family) => a.title.localeCompare(b.title))
     }
   }
 
