@@ -3,19 +3,9 @@ export const useFamiliesStore = defineStore('families', () => {
   const active = ref(0)
 
   const filter = computed(() => {
-    if (active.value === 0) {
-      return {
-        status: { _eq: 'published' }
-      }
-    }
-    else {
-      return {
-        _and: [
-          { status: { _eq: 'published' } },
-          { categories: { categories_id: { id: { _eq: active.value } } } }
-        ]
-      }
-    }
+    return active.value !== 0
+      ? { categories: { categories_id: { id: { _eq: active.value } } } }
+      : { id: { _nnull: true } }
   })
 
   async function fetch() {
