@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const localePath = useLocalePath()
 
-const links = [
+const links: Link[] = [
   { title: "tools", path: "/tools" },
   { title: "training", path: "/training" }
 ]
@@ -13,12 +13,12 @@ const links = [
       <NavMobile :links="links" />
       <img class="w-12 hidden lg:block" src="~/assets/img/unifr-logo.png" alt="Unifr logo" />
       <NuxtLink :to="localePath('/')" class="btn btn-ghost normal-case text-xl">MyPLE</NuxtLink>
-      <div class="dropdown dropdown-hover hidden lg:block">
-        <label tabindex="0" class="btn btn-ghost m-1"><IconNotebook /> {{ $t('activities') }}</label>
-        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box">
+      <details id="activities-menu" class="dropdown hidden lg:block">
+        <summary class="btn btn-ghost m-1"><IconNotebook /> {{ $t('activities') }}</summary>
+        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box">
           <NavActivities />
         </ul>
-      </div>
+      </details>
       <NuxtLink v-for="link in links" :key="link.title" :to="localePath(link.path)" class="btn btn-ghost m-1 hidden lg:flex">
         <IconTools v-if="link.title === 'tools'" />
         <IconSchool v-if="link.title === 'training'" />

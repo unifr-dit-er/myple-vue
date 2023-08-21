@@ -66,20 +66,20 @@ function getSteps(toolData:any) {
     .filter((stepData: any) => stepData.steps_id !== null && stepData.steps_id.activity !== null)
       .map((stepData: any) => {
         return {
-          id: Number(stepData.steps_id.activity.id),
+          id: Number(stepData.steps_id.id),
           title: dTranslate(stepData.steps_id, 'title'),
-          step: Number(stepData.steps_id.id)
+          activity: Number(stepData.steps_id.activity.id)
         }
       })
-  }).sort((a: Link, b: Link) => a.title.localeCompare(b.title))
+  }).sort((a: StepLink, b: StepLink) => a.title.localeCompare(b.title))
 
   // Remove duplicates based on step id
   const ids = new Set();
-  steps = steps.filter((step: Link) => {
-    if(ids.has(step.step)) {
+  steps = steps.filter((step: StepLink) => {
+    if(ids.has(step.id)) {
       return false;
     } else {
-      ids.add(step.step);
+      ids.add(step.id);
       return true;
     }
   })

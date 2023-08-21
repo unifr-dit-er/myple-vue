@@ -5,14 +5,19 @@ declare global {
   interface Activity {
     id: number;
     title: string;
-    content: string;
-    steps: Step[];
+    content?: string;
+    steps?: Step[];
   }
 
   interface Link {
+    title: string;
+    path: string;
+  }
+
+  interface StepLink {
     id: number;
     title: string;
-    step?: number;
+    activity: number;
   }
 
   interface Step {
@@ -57,7 +62,7 @@ declare global {
     urlAlternativeto?: string;
     urlUnifr?: string;
     urlUsi?: string;
-    steps?: Link[];
+    steps?: StepLink[];
   }
 
   interface Tag {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const localePath = useLocalePath()
-const props = defineProps<{
+defineProps<{
   links: Link[]
 }>()
 </script>

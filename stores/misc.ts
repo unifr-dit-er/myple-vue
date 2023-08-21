@@ -1,7 +1,7 @@
 import { storeToRefs } from 'pinia'
 
 export const useMiscStore = defineStore('misc', () => {
-  const activities: Ref<Link[]> = ref([])
+  const activities: Ref<Activity[]> = ref([])
   const settings = useSettingsStore()
 
   const { dLang } = storeToRefs(settings)
@@ -22,7 +22,7 @@ export const useMiscStore = defineStore('misc', () => {
         }
       })
       .filter((activity: any) => activity.title.trim() !== '')
-      .sort((a: Link, b: Link) => a.title.localeCompare(b.title))
+      .sort((a: Activity, b: Activity) => a.title.localeCompare(b.title))
     }
   }
 
