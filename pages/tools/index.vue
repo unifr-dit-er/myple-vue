@@ -1,5 +1,14 @@
 <script setup lang="ts">
 const store = useToolsStore()
+const families = useFamiliesStore()
+
+onMounted(() => {
+  const hash = window.location.hash
+  if (hash.startsWith('#family')) {
+    const id = Number(hash.split('#family-')[1])
+    families.setActive(id)
+  }
+})
 </script>
 
 <template>
