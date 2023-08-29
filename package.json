@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
+    "@ubclaunchpad/vue-fathom": "^2.0.0",
     "daisyui": "^3.1.0",
     "nuxt-graphql-client": "^0.2.25",
     "pinia": "^2.1.4"
