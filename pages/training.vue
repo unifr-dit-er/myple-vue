@@ -4,7 +4,7 @@ const store = useTrainingsStore()
 
 <template>
   <div class="min-h-screen bg-base-300 py-32">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-5xl mx-auto px-2">
       <div class="flex mb-4 items-center">
         <IconSchoolLarge />
         <h2 class="text-4xl font-bold leading-normal ml-3">{{ $t('training') }}</h2>
