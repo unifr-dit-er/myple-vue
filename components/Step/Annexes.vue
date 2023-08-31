@@ -15,10 +15,3 @@ defineProps<{
     </div>
   </div>
 </template>
-
-<style scoped>
-.collapse-content :deep(iframe) {
-  @apply w-full;
-  height: 500px;
-}
-</style>

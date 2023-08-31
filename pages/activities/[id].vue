@@ -33,3 +33,10 @@ intro,
     </div>
   </div>
 </template>
+
+<style scoped>
+:deep(iframe) {
+  @apply max-w-full;
+  @apply max-h-96;
+}
+</style>
