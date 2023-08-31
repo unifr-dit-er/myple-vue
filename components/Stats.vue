@@ -3,7 +3,7 @@ const { stats } = useStatsStore()
 </script>
 
 <template>
-  <div class="stats shadow">
+  <div class="stats stats-vertical text-center w-full lg:stats-horizontal lg:text-left lg:w-auto shadow ">
 
     <div class="stat">
       <div class="stat-title">{{ $t('activities') }}</div>
