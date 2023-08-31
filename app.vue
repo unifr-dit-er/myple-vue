@@ -10,10 +10,12 @@ useHead({
 })
 </script>
 
-<template tabindex="0">
-  <Navbar />
-  <NuxtPage />
-  <Footer />
+<template>
+  <div tabindex="0">
+    <Navbar />
+    <NuxtPage />
+    <Footer />
+  </div>
 </template>
 
 <style>
