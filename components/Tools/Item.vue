@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <div @click="store.fetchAndOpen(tool.id)" class="card card-compact bg-base-200 shadow-xl cursor-pointer">
+  <div class="card card-compact bg-base-200 shadow-xl cursor-pointer">
     <div class="card-body">
       <div class="flex">
         <div class="avatar">
