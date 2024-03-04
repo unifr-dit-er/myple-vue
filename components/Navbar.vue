@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import IconTools from '@/components/Icon/Tools.vue'
+import IconSchool from '@/components/Icon/School.vue'
 const localePath = useLocalePath()
 
 const links: Link[] = [
-  { title: "tools", path: "/tools" },
-  { title: "training", path: "/training" }
+  { title: "tools", path: "/tools", icon: IconTools },
+  { title: "training", path: "/training", icon : IconSchool }
 ]
 </script>
 
@@ -15,14 +17,12 @@ const links: Link[] = [
       <NuxtLink :to="localePath('/')" class="btn btn-ghost normal-case text-xl">MyPLE</NuxtLink>
       <details id="activities-menu" class="dropdown hidden lg:block">
         <summary class="btn btn-ghost m-1"><IconNotebook /> {{ $t('activities') }}</summary>
-        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box">
+        <ul class="w-80 p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box">
           <NavActivities />
         </ul>
       </details>
       <NuxtLink v-for="link in links" :key="link.title" :to="localePath(link.path)" class="btn btn-ghost m-1 hidden lg:flex">
-        <IconTools v-if="link.title === 'tools'" />
-        <IconSchool v-if="link.title === 'training'" />
-        {{ $t(link.title) }}
+        <component :is="link.icon" />{{ $t(link.title) }}
       </NuxtLink>
     </div>
     <div class="navbar-end">
