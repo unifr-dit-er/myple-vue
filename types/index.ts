@@ -12,6 +12,7 @@ declare global {
   interface Link {
     title: string;
     path: string;
+    icon: Component;
   }
 
   interface StepLink {
