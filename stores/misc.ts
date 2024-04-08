@@ -22,7 +22,6 @@ export const useMiscStore = defineStore('misc', () => {
         }
       })
       .filter((activity: any) => activity.title.trim() !== '')
-      .sort((a: Activity, b: Activity) => a.title.localeCompare(b.title))
     }
   }
 

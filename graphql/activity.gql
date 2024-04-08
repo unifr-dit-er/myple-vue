@@ -42,7 +42,7 @@ query GetActivity($id: ID!, $lang: String!) {
 }
 
 query GetActivities($lang: String!) {
-  activities: activities(filter: {status: {_eq: "published"} }) {
+  activities: activities(filter: {status: {_eq: "published"} }, sort: ["sort"]) {
     id
     translations(filter: {languages_code: {_eq: $lang} }) {
       title
