@@ -11,11 +11,15 @@
   "related_resources": "Ressourcen, um weiterzukommen",
   "tools_description": "Des outils...",
   "dev": "Entwicklung",
-  "educational_contents": "Pädagogische Inhalte des",
-  "didanum": "Dienststelle für Hochschuldidaktik und digitale Kompetenzen",
+  "educational_contents": "Pädagogische Inhalte",
+  "didanum": "Didanum",
   "copyright": "Namensnennung - Nicht-kommerziell",
   "copyright2": "Weitergabe unter gleichen Bedingungen 3.0 Schweiz (CC BY-NC-SA 3.0 CH)",
   "all": "Alle",
   "official_website": "Offizielle Website",
-  "related_activities": "Verbundene Aktivitäten"
+  "related_activities": "Verbundene Aktivitäten",
+  "availability": "Verfügbarkeit",
+  "training_access": "Zur Ausbildung",
+  "activity_steps": "Schritte",
+  "intro": "Einführung"
 }

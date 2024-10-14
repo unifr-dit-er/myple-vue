@@ -1,35 +1,49 @@
 <script setup lang="ts">
-const store = useActivityStore()
-const isIntroActive = ref(true)
-const { id: idParams } = useRoute().params
-const id = typeof idParams === 'string' ? Number(idParams) : Number(idParams[0])
-store.fetch(id)
+import type { Activity, ActivityStep } from "@/types/activity"
 
-const intro = ref(null)
-useIntersectionObserver(
-intro,
-([{ isIntersecting }]) => {
-  isIntroActive.value = isIntersecting
-},
-)
+const { id } = useRoute().params
+const apiProvider = useRuntimeConfig().public.apiProvider
+const { locale } = useI18n()
+
+const { data: activity, error, pending } = await useFetch<Activity>(`/api/${apiProvider}/activities/${id}`, {
+  query: { lang: `${locale.value}-${locale.value.toUpperCase()}` }
+})
+
+const introRef = ref(null)
+const introVisibility = useElementVisibility(introRef)
+
+const tocItems = computed(() => {
+  return activity.value?.steps?.map((step: ActivityStep, index: number) => { 
+    return { 
+      id: step.id, 
+      title: step.title || 'Undefined', 
+      isActive: false
+    } 
+  }) || []
+})
 </script>
 
 <template>
-  <div v-if="store.activity" class="min-h-screen bg-base-300 py-32">
+  <div v-if="activity" class="min-h-screen bg-base-300 py-32">
     <div>
-      <div>
-        <div class="bg-base-200 hidden lg:block fixed top-32 left-4 w-80 p-4 shadow">
-          <ActivityToc :title="store.activity.title" :steps="store.activity.steps || []" :is-intro-active="isIntroActive" />
+      <div class="bg-base-200 hidden lg:block fixed top-32 left-4 w-80 p-4 shadow">
+        <VToc :title="activity.title" :items="tocItems" :is-intro-active="introVisibility" />
+      </div>
+    </div>
+    <div class="max-w-5xl lg:ml-96 p-4">
+      <article class="">
+        <h1 class="inline-block text-3xl font-bold py-6 mb-5 w-full border-b-2 border-neutral-400">
+          <IconNotebookLarge class="inline w-8 text-rose-500" /> {{ activity.title }}
+        </h1>
+        <div class="bg-base-200 p-6 m-4">
+          <section id="intro" ref="introRef">
+            <div v-html="activity.description" class="prose max-w-none"></div>
+          </section>
         </div>
-      </div>
-      <div class="max-w-5xl lg:ml-96 p-4">
-        <article class="">
-          <h1 class="inline-block text-3xl font-bold pt-3"><IconNotebookLarge class="inline w-8" /> {{ store.activity.title }}</h1>
-          <div class="divider"></div>
-          <div ref="intro" class="prose max-w-none max-w-4xl" v-html="store.activity.content"></div>
-          <ActivityStep v-for="step in store.activity.steps" :key="step.id" :step="step" />
-        </article>
-      </div>
+        <div v-for="step in activity.steps" :key="step.id" class="bg-base-200 p-6 m-4">
+          <ActivityStep :step="step" />
+        </div>
+      </article>
     </div>
   </div>
 </template>

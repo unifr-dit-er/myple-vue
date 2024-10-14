@@ -1,8 +1,0 @@
-query GetFamilies($lang: String!) {
-  families: categories {
-    id
-    translations(filter: {languages_code: {_eq: $lang} }) {
-      title
-    }
-  }
-}

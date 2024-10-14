@@ -1,5 +1,7 @@
 {
+  "name": "myple-vue",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -8,20 +10,18 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.0.8",
+    "@nuxt/devtools": "^1.5",
     "@nuxtjs/i18n": "^8.0.0-rc.2",
-    "@nuxtjs/tailwindcss": "^6.2.0",
-    "@tailwindcss/typography": "^0.5.9",
+    "@nuxtjs/tailwindcss": "^6.12",
+    "@tailwindcss/typography": "^0.5",
     "@vueuse/core": "^10.2.0",
     "@vueuse/nuxt": "^10.2.0",
-    "nuxt": "^3.5.3"
+    "nuxt": "^3.10.0",
+    "daisyui": "^4.4.0"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.4.11",
-    "@ubclaunchpad/vue-fathom": "^2.0.0",
-    "daisyui": "^4.4.0",
-    "nuxt-graphql-client": "^0.2.25",
-    "pinia": "^2.1.4"
+    "@directus/sdk": "^17.0.1",
+    "@ubclaunchpad/vue-fathom": "^2.0.0"
   },
   "overrides": {
     "vue": "latest"

@@ -11,11 +11,15 @@
   "related_resources": "Risorse per approfondire",
   "tools_description": "Des outils...",
   "dev": "Sviluppo",
-  "educational_contents": "Contenuti didattici del",
-  "didanum": "Service de didactique universitaire et compétences numériques",
+  "educational_contents": "Contenuti didattici",
+  "didanum": "Didanum",
   "copyright": "Attribuzione - Non commerciale",
   "copyright2": "Condividi allo stesso modo 3.0 Switzerland (CC BY-NC-SA 3.0 CH)",
   "all": "Tutto",
   "official_website": "Sito ufficiale",
-  "related_activities": "Attività correlate"
+  "related_activities": "Attività correlate",
+  "availability": "Disponibilità",
+  "training_access": "Accedere alla formazione",
+  "activity_steps": "Fasi",
+  "intro": "Introduzione"
 }

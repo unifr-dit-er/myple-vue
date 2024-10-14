@@ -11,11 +11,15 @@
   "related_resources": "Des ressources pour aller plus loin",
   "tools_description": "Des outils...",
   "dev": "Développement",
-  "educational_contents": "Contenus pédagogiques du",
-  "didanum": "Service de didactique universitaire et compétences numériques",
+  "educational_contents": "Contenus pédagogiques",
+  "didanum": "Didanum",
   "copyright": "Attribution - Pas d’Utilisation Commerciale",
   "copyright2": "Partage dans les Mêmes Conditions 3.0 Suisse (CC BY-NC-SA 3.0 CH)",
   "all": "Tous",
-  "official_website": "Site officiel",
-  "related_activities": "Activités liées"
+  "official_website": "Page officielle",
+  "related_activities": "Activités liées",
+  "availability": "Disponibilité",
+  "training_access": "Accéder à la formation",
+  "activity_steps": "Étapes",
+  "intro": "Introduction"
 }
