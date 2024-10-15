@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="hero min-h-screen">
+  <div class="hero self-center">
     <div class="hero-content max-w-5xl flex-col lg:flex-row-reverse">
       <img src="~/assets/img/error.png" class="max-w-sm rounded-lg shadow-2xl ml-4" />
       <div>

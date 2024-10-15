@@ -10,9 +10,9 @@ const { data: trainings, error } = await useFetch<Training[]>(`/api/${apiProvide
 </script>
 
 <template>
-  <div>
+  <div class="flex justify-center min-h-screen bg-base-300 py-24">
     <VError v-if="error" :code="error.statusCode" :message="error.statusMessage" />
-    <div v-else-if="trainings" class="min-h-screen bg-base-300 py-32">
+    <div v-else-if="trainings">
       <div class="max-w-screen-2xl mx-auto px-2">
         <div class="flex mb-4 items-center">
           <IconSchoolLarge class="text-teal-500" />

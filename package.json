@@ -14,14 +14,15 @@
     "@nuxtjs/i18n": "^8.0.0-rc.2",
     "@nuxtjs/tailwindcss": "^6.12",
     "@tailwindcss/typography": "^0.5",
-    "@vueuse/core": "^10.2.0",
+    "@vueuse/core": "^10.11.1",
     "@vueuse/nuxt": "^10.2.0",
-    "nuxt": "^3.10.0",
-    "daisyui": "^4.4.0"
+    "daisyui": "^4.4.0",
+    "nuxt": "^3.10.0"
   },
   "dependencies": {
     "@directus/sdk": "^17.0.1",
-    "@ubclaunchpad/vue-fathom": "^2.0.0"
+    "@ubclaunchpad/vue-fathom": "^2.0.0",
+    "@vueuse/components": "^11.1.0"
   },
   "overrides": {
     "vue": "latest"
