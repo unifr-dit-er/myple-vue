@@ -9,6 +9,7 @@ export interface Tool {
   urlAlternativeto?: string;
   urlUnifr?: string;
   urlUsi?: string;
+  activityStepsCount: number;
 }
 
 export interface ToolFamily {

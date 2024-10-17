@@ -13,7 +13,10 @@ export default defineEventHandler(async (event) => {
   const res = await useDirectus().request(
     readItems("tools", {
       limit: -1,
-      fields: ["*", "translations.*", "families.tool_families_id.*", "families.tool_families_id.translations.title"],
+      fields: [
+        "*", "translations.*", 
+        "families.tool_families_id.*", "families.tool_families_id.translations.title", "families.tool_families_id.steps.steps_id"
+      ],
       deep: { 
         translations: { _filter: { languages_code: { _eq: lang } } },
         families: {
@@ -32,6 +35,10 @@ export default defineEventHandler(async (event) => {
 })
 
 const transform = (response: any, translations: Translation[], lang: string): Tool => {
+  const steps: number[] = response.families
+    .flatMap((family: any) => family.tool_families_id.steps.map((step: any) => step.steps_id as number))
+    .filter((value: number, index: number, self: number[]) => self.indexOf(value) === index) // Remove duplicates
+
   return {
     id: response.id,
     title: response.title || "Missing title",
@@ -42,6 +49,7 @@ const transform = (response: any, translations: Translation[], lang: string): To
     urlOfficial: response.url_official,
     urlAlternativeto: response.url_alternativeto,
     urlUnifr: response.url_unifr,
-    urlUsi: response.url_usi
+    urlUsi: response.url_usi,
+    activityStepsCount: steps.length
   }
 }
