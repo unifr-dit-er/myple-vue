@@ -44,7 +44,11 @@ const transform = (response: any, translations: Translation[], lang: string): To
     title: response.title || "Missing title",
     image: `https://eddb.unifr.ch/didanum-admin/assets/${response.image}/?width=160&height=160`,
     description: response.translations[0]?.description || "",
-    families: response.families.map((family: any) => { return { id: 1, title: family.tool_families_id.translations[0]?.title, slug: family.tool_families_id.slug } } ),
+    families: response.families.map((family: any) => ({
+      id: 1, 
+      title: family.tool_families_id.translations[0]?.title, 
+      slug: family.tool_families_id.slug 
+    })),
     tags: response.tags.map((tag: string) => dTranslate(translations, tag, lang)),
     urlOfficial: response.url_official,
     urlAlternativeto: response.url_alternativeto,

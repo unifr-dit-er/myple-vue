@@ -9,7 +9,8 @@ export interface Tool {
   urlAlternativeto?: string;
   urlUnifr?: string;
   urlUsi?: string;
-  activityStepsCount: number;
+  activityStepsCount?: number;
+  steps?: ToolStep[];
 }
 
 export interface ToolFamily {
@@ -17,4 +18,11 @@ export interface ToolFamily {
   title: string;
   slug: string;
   tools?: Tool[];
+}
+
+export interface ToolStep {
+  id: number;
+  title: string;
+  activity: { id: number, title: string };
+  sort: number;
 }

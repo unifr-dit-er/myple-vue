@@ -57,7 +57,9 @@ const { data: tools, error } = await useFetch<Tool[]>(`/api/${apiProvider}/tools
               <div class="my-6 text-slate-700 text-lg" v-html="tool.description"></div>
               <div class="flex-1"></div>
               <div v-if="tool.activityStepsCount" class="card-actions">
-                <a class="btn w-full"><IconBook class="text-rose-500 mr-1" /> {{ tool.activityStepsCount }} {{  $t('related_activities') }}</a>
+                <NuxtLink :to="localePath(`/tools/tool-${ tool.id }`)" class="btn w-full">
+                  <IconBook class="text-rose-500 mr-1" /> {{ tool.activityStepsCount }} {{  $t('related_activities') }}
+                </NuxtLink>
               </div>
               <div class="card-actions justify-center">
                 <a v-if="tool.urlOfficial" :href="tool.urlOfficial" class="btn btn-sm w-full xl:w-52"><IconExternalLink /> {{ $t('official_website') }}</a>

@@ -5,10 +5,11 @@ import type { ToolFamily } from "@/types/tool"
 const { id } = useRoute().params
 const apiProvider = useRuntimeConfig().public.apiProvider
 const { locale } = useI18n()
+const lang = `${locale.value}-${locale.value.toUpperCase()}`
 const localePath = useLocalePath()
 
 const { data: activity, error, pending } = await useFetch<Activity>(`/api/${apiProvider}/activities/${id}`, {
-  query: { lang: `${locale.value}-${locale.value.toUpperCase()}` }
+  query: { lang }
 })
 
 const toc = computed(() => {
