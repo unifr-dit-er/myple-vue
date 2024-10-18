@@ -8,15 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="alert my-4 bg-base-100">
-    <div class="flex">
-      <IconTools v-if="icon === 'tools'" class="shrink-0 mr-2" :class="color" />
-      <div>
-        {{ title }} :
-        <NuxtLink v-for="link in links" :to="link.location" class="link mr-2" :class="color">
-          {{ link.title }}
-        </NuxtLink>
-      </div>
-    </div>
-  </div>
+  <ul class="menu menu-vertical lg:menu-horizontal bg-base-100 rounded-box">
+    <li v-for="link in links"><a><IconTools v-if="icon === 'tools'" :class="color" />{{ link.title }}</a></li>
+  </ul>
 </template>

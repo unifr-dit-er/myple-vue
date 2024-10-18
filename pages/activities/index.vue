@@ -23,7 +23,7 @@ const { data: activities, error } = await useFetch<Activity[]>(`/api/${apiProvid
           <NuxtLink :to="localePath(`/activities/${ activity.id}`)">
             <IconNotebook />
             {{ activity.title }}
-            <span class="badge badge-sm ml-4 lg:ml-56">{{ activity.steps?.length }} {{ $t('activity_steps')}}</span>
+            <span class="badge badge-sm ml-4 hidden md:block lg:ml-56">{{ activity.steps?.length }} {{ $t('activity_steps')}}</span>
           </NuxtLink>
         </li>
       </ul>
