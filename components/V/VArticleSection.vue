@@ -37,4 +37,11 @@ h2:before {
   margin-top:-100px;
   visibility:hidden;
 }
+:deep(p) {
+  overflow-wrap: anywhere;
+}
+:deep(iframe) {
+  @apply max-w-full;
+  @apply max-h-96;
+}
 </style>
