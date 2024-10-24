@@ -5,19 +5,15 @@ defineProps<{
   toc?: { id: string, title: string }[],
 }>()
 
-const isIntroActive = ref<boolean>(true)
+const isIntroActive = ref<boolean>(false)
 const sectionsVisibility = reactive<{ [key: string]: boolean }>({})
-
-const tocIntroActive = computed(() => {
-  return isIntroActive.value
-})
 </script>
 
 <template>
   <article class="flex m-1">
     <div v-if="toc" id="article-toc" class="w-80 mr-6 relative hidden lg:block">
       <div class="bg-base-200 sticky top-32 left-0 shadow w-80 p-4">
-        <VToc :title="title" :is-intro-active="tocIntroActive" :items="toc.map((item: any) => ({ id: item.id, title: item.title, isActive: sectionsVisibility[item.id] }))" />
+        <VToc :title="title" :is-intro-active="isIntroActive" :items="toc.map((item: any) => ({ id: item.id, title: item.title, isActive: sectionsVisibility[item.id] }))" />
       </div>
     </div>
     <div id="article-content">
