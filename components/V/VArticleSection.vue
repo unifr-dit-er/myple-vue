@@ -15,7 +15,6 @@ watchEffect(() =>{
 
 <template>
   <section :id="id" class="bg-base-200 p-6 my-4" ref="section">
-    {{ visibility }}
     <h2 v-if="title" class="text-2xl font-bold mb-6">
       {{ title }}
     </h2>
