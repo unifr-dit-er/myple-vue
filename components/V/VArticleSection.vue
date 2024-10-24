@@ -6,7 +6,6 @@ const { content = '' } = defineProps<{
 }>()
 
 const visibility = defineModel()
-
 const section = ref(null)
 
 watchEffect(() =>{

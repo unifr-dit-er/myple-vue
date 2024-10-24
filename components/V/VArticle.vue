@@ -5,7 +5,7 @@ defineProps<{
   toc?: { id: string, title: string }[],
 }>()
 
-const isIntroActive = ref()
+const isIntroActive = ref<boolean>(true)
 const sectionsVisibility = reactive<{ [key: string]: boolean }>({})
 </script>
 
