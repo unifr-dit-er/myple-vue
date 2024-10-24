@@ -54,7 +54,7 @@ function mapResources(resources: Resource[]) {
             <VRelatedLinks v-if="step.toolFamilies?.length" :title="$t('related_families')" icon="tools" color="text-indigo-500" :links="mapToolFamilies(step.toolFamilies)" />
           </template>
           <template #footer>
-            <!-- <VRelatedContent v-for="annex in step.annexes" :title="annex.title" :content="annex.content" /> -->
+            <VRelatedContent v-for="annex in step.annexes" :title="annex.title" :content="annex.content" />
             <VRelatedList v-if="step.resources?.length" :title="$t('related_resources')" :links="mapResources(step.resources)" />
           </template>
         </VArticleSection>
