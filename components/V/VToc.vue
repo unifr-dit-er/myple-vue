@@ -1,7 +1,7 @@
 <script setup lang="ts">
-defineProps<{
+const { isIntroActive = true } = defineProps<{
   title: string,
-  isIntroActive: boolean,
+  isIntroActive?: boolean,
   items: { id: string, title: string, isActive: boolean }[]
 }>()
 </script>
