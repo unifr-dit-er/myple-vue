@@ -2,27 +2,14 @@
   <footer class="footer footer-center bg-neutral text-neutral-content p-10">
     <aside>
       <div class="flex">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-open-source" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M12 3a9 9 0 0 1 3.618 17.243l-2.193 -5.602a3 3 0 1 0 -2.849 0l-2.193 5.603a9 9 0 0 1 3.617 -17.244z"></path>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-letter-n" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M7 20v-16l10 16v-16"></path>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-letter-t" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M6 4l12 0"></path>
-          <path d="M12 4l0 16"></path>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-letter-e" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M17 4h-10v16h10"></path>
-          <path d="M7 12l8 0"></path>
-        </svg>
+        <Icon name="tabler:circle-letter-d" size="36px" />
+        <Icon name="tabler:circle-letter-i" size="36px" />
+        <Icon name="tabler:circle-letter-t" size="36px" />
+        <Icon name="tabler:circle-letter-e-filled" size="36px" />
+        <Icon name="tabler:circle-letter-r-filled" size="36px" />
       </div>
       <p class="font-bold">
-        {{ $t('dev') }} <a class="link" href="https://www.unifr.ch/nte/fr/">DIT-NTE</a>
+        {{ $t('dev') }} <a class="link" href="https://www.unifr.ch/nte/fr/">DIT Enseignement et Recherche</a>
         <br />
         {{ $t('educational_contents') }} <a class="link" href="https://www.unifr.ch/uni/fr/organisation/acad/didactique-universitaire/">{{ $t('didanum') }}</a>
       </p>
@@ -31,10 +18,10 @@
         <br>{{ $t('copyright2') }}
       </a>
       <div class="flex items-center">
-        <IconCreativeCommons />
-        <IconCreativeCommonsBy />
-        <IconCreativeCommonsNc />
-        <IconCreativeCommonsSa />
+        <Icon name="tabler:creative-commons" size="24px" />
+        <Icon name="tabler:creative-commons-by" size="24px" />
+        <Icon name="tabler:creative-commons-nc" size="24px" />
+        <Icon name="tabler:creative-commons-sa" size="24px" />
       </div>
     </aside>
   </footer>
