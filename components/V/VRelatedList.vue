@@ -6,7 +6,8 @@ defineProps<{
 </script>
 
 <template>
-  <div tabindex="0" class="collapse collapse-arrow border-base-300 border bg-base-100">
+  <div class="collapse collapse-arrow border-base-300 border bg-base-100">
+    <input type="checkbox" />
     <div class="collapse-title font-medium">
       <IconResources class="inline mr-1" />
       {{ title }}

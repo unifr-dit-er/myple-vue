@@ -17,7 +17,7 @@ const toc = computed(() => {
     return { 
       id: String(step.id), 
       title: step.title || 'Undefined'
-    } 
+    }
   }) || []
 })
 
