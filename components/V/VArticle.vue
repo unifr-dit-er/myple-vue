@@ -13,7 +13,7 @@ const sectionsVisibility = reactive<{ [key: string]: boolean }>({})
   <article class="flex m-1">
     <div v-if="toc" id="article-toc" class="w-80 mr-6 relative hidden lg:block">
       <div class="bg-base-200 sticky top-32 left-0 shadow w-80 p-4">
-        <VToc :title="title" :is-intro-active="false" :items="toc.map((item: any) => ({ id: item.id, title: item.title, isActive: sectionsVisibility[item.id] }))" />
+        <VToc :title="title" :is-intro-active="isIntroActive" :items="toc.map((item: any) => ({ id: item.id, title: item.title, isActive: sectionsVisibility[item.id] }))" />
       </div>
     </div>
     <div id="article-content">
