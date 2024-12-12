@@ -42,6 +42,7 @@ function mapResources(resources: Resource[]) {
     <VError v-if="error" :code="error.statusCode" :message="error.statusMessage" />
     <div v-else-if="activity" class="max-w-[1600px]">
       <VArticle :title="activity.title" :introduction="activity.description" :toc="toc" v-slot="{ sectionsVisibility }">
+        <VArticleSection id="intro" :content="activity.description" v-model="sectionsVisibility['intro']" />
         <VArticleSection 
           v-for="step in activity.steps" 
           :key="step.id" 

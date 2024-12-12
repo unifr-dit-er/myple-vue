@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { content = '' } = defineProps<{
+const { id, content = '' } = defineProps<{
   id: string,
   title?: string
   content?: string
@@ -8,8 +8,9 @@ const { content = '' } = defineProps<{
 const visibility = defineModel()
 const section = ref(null)
 
-watchEffect(() =>{
-  visibility.value = useElementVisibility(section)
+watchEffect(() => {
+  const isVisible = useElementVisibility(section)
+  visibility.value = isVisible
 })
 </script>
 
