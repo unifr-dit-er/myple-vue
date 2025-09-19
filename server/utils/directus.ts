@@ -2,7 +2,7 @@ import { createDirectus, rest } from '@directus/sdk'
 import type { DirectusClient, RestClient } from '@directus/sdk'
 
 export interface Translation {
-  id: string;
+  id?: string;
   language: string;
   key: string;
   value: string;
@@ -12,7 +12,7 @@ let _directus : DirectusClient<any> & RestClient<any>
 
 export const useDirectus = () => {
   if (!_directus) {
-    _directus = createDirectus('https://eddb.unifr.ch/didanum-admin').with(rest())
+    _directus = createDirectus('https://eddb.unifr.ch/didanum9-admin').with(rest())
   }
   return _directus
 }
