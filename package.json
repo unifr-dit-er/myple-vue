@@ -13,7 +13,7 @@
     "@iconify-json/tabler": "^1.2.11",
     "@nuxt/devtools": "^1.5",
     "@nuxt/icon": "^1.10.1",
-    "@nuxtjs/i18n": "^8.0.0-rc.2",
+    "@nuxtjs/i18n": "^9.0.0",
     "@nuxtjs/tailwindcss": "^6.12",
     "@tailwindcss/typography": "^0.5",
     "@vueuse/core": "^10.11.1",

@@ -20,8 +20,12 @@ export default defineNuxtConfig({
   },
   i18n: {
     strategy: "prefix",
-    locales: ['fr', 'de', 'it'],
-    defaultLocale: "fr"
+    locales: [
+      { code: "fr", name: "Français", file: "fr.json" },
+      { code: "de", name: "Deutsch", file: "de.json" },
+      { code: "it", name: "Italiano", file: "it.json" }
+    ],
+    defaultLocale: "fr",
   },
   vue: {
     propsDestructure: true
