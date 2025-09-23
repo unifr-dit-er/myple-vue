@@ -3,26 +3,18 @@ import IconTools from '@/components/Icon/Tools.vue'
 import IconSchool from '@/components/Icon/School.vue'
 import IconBook from '@/components/Icon/Book.vue'
 const localePath = useLocalePath()
-const route = useRoute()
-const router = useRouter()
-const { locale } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
 
 const links = [
   { title: "activities", path: "/activities", icon: IconBook, class: "text-rose-500" },
   { title: "tools", path: "/tools", icon: IconTools, class: "text-indigo-500" },
   { title: "training", path: "/trainings", icon : IconSchool, class: "text-teal-500" }
 ]
-const langs = [
+const langs: { id: "fr" | "de" | "it"; title: string }[] = [
   { id: "fr", title: "Français" },
   { id: "de", title: "Deutsch" },
   { id: "it", title: "Italiano" }
 ]
-
-function switchLang(l:string) {
-  locale.value = l
-  const newPath = route.path.replace(/\/(de|fr|it)/, `/${l}`)
-  router.push(newPath)
-}
 </script>
 
 <template>
@@ -57,9 +49,9 @@ function switchLang(l:string) {
         </div>
         <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-36 p-2 shadow">
           <li v-for="lang in langs" :key="lang.id">
-            <a @click="switchLang(lang.id)">
+            <NuxtLink :to="switchLocalePath(lang.id)">
               <img class="w-6 rounded" :src="`/img/${lang.id}.svg`" alt="" /> {{ lang.title }}
-            </a>
+            </NuxtLink>
           </li>
         </ul>
       </div>
